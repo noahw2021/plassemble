@@ -20,5 +20,5 @@ void aui_showsyntax(int argc, char** argv) {
 	printf("\nSemantics:");
 	printf("NumericalBase: How numbers are interpreted. (2-36)\n");
 	printf("\n");
-	return 0;
+	return;
 }
