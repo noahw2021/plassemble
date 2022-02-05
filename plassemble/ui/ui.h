@@ -9,5 +9,7 @@
 #define ui_h
 
 void aui_showhelp(int argc, char** argv);
+void aui_showsyntax(int argc, char** argv);
+void aui_interactive(int argc, char** argv);
 
 #endif /* ui_h */

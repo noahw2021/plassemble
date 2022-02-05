@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "ui/ui.h"
+
 #define ArgumentBody(Source, Name) if (!strcmp(Source, Name))
 int main(int argc, char** argv) {
 	if (argc < 2) {
@@ -25,10 +27,10 @@ int main(int argc, char** argv) {
 	}
 	
 	ArgumentBody(Source, "-h") { // Help
-		
+		aui_showhelp(argc, argv);
 	}
 	
-	ArgumentBody(Source, "-s") { //
+	ArgumentBody(Source, "-s") { // Display syntax
 		
 	}
 }
