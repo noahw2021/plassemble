@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "ui.h"
 
-void aui_help(int argc, char** argv) {
+void aui_showhelp(int argc, char** argv) {
 	printf("Plassemble: PLASM assembler.\n");
 	printf("%s -a (outfile): Start assembler in interactive mode.\n", argv[0]);
 	printf("%s -f (outfile) (infile): Start assembler with file.\n", argv[0]);
