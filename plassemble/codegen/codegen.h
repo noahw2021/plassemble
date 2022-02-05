@@ -23,4 +23,10 @@ void cg_compile(void);
 void cgi_notify(byte Point, u32 Data);
 u32 cgi_getinfo(byte Point);
 
+typedef struct _cgctx {
+	FILE* PhysicalFile;
+	u32 NumericalBase;
+}cgctx_t;
+extern cgctx_t* cgctx;
+
 #endif /* codegen_h */
