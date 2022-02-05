@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "root.h"
 #include "ui/ui.h"
 
 #define ArgumentBody(Source, Name) if (!strcmp(Source, Name))
@@ -19,7 +20,7 @@ int main(int argc, char** argv) {
 	
 	char* Source = argv[1];
 	ArgumentBody(Source, "-a") { // Assembler in interactive mode
-		
+		aui_interactive(argc, argv);
 	}
 	
 	ArgumentBody(Source, "-f") { // Assembler in file mode
@@ -31,6 +32,6 @@ int main(int argc, char** argv) {
 	}
 	
 	ArgumentBody(Source, "-s") { // Display syntax
-		
+		aui_showsyntax(argc, argv);
 	}
 }

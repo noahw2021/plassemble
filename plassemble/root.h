@@ -7,6 +7,7 @@
 
 #ifndef root_h
 #define root_h
+#include <stdio.h>
 
 typedef unsigned char byte;
 typedef unsigned short u16;
@@ -17,5 +18,8 @@ typedef char i8, str;
 typedef short i16;
 typedef long i32;
 typedef long long i64;
+
+void parse_stdfile(FILE* File);
+void parse_string(char* String);
 
 #endif /* root_h */
