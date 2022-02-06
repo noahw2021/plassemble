@@ -34,6 +34,29 @@ void cgi_tokenize(char* Source, char* Operation, char* OperandA, char* OperandB,
 	}
 	free(Data);
 }
+
+#define Instruction(Source, Destination, Opcode) if (!strcmp(Source, #Opcode)) { *Destination = Opcode; }
+
 void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, char* OperandCStr, byte* Operation, u64* OperandA, u64* OperandB, u64* OperandC, byte* Regmap, byte* PresentMap) {
 	
+	char* SourceOperation = malloc(64);
+	char* SourceOperandA = malloc(64);
+	char* SourceOperandB = malloc(64);
+	char* SourceOperandC = malloc(64);
+	
+	strcpy(SourceOperation, OperationStr);
+	strcpy(SourceOperandA, OperandAStr);
+	strcpy(SourceOperandB, OperandBStr);
+	strcpy(SourceOperandC, OperandCStr);
+	rtl_strupr(SourceOperation, SourceOperation);
+	rtl_strupr(SourceOperandA, SourceOperandA);
+	rtl_strupr(SourceOperandB, SourceOperandB);
+	rtl_strupr(SourceOperandC, SourceOperandC);
+
+	
+	
+	free(SourceOperation);
+	free(SourceOperandA);
+	free(SourceOperandB);
+	free(SourceOperandC);
 }

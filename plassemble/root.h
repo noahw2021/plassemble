@@ -22,4 +22,6 @@ typedef long long i64;
 void parse_stdfile(FILE* File);
 void parse_string(char* String);
 
+char* rtl_strupr(char* Source, char* Destination);
+
 #endif /* root_h */
