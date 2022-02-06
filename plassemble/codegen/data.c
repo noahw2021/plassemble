@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #include "codegen.h"
 cgctx_t* cgctx;
 
@@ -18,4 +20,8 @@ void cg_init(FILE* Output) {
 }
 void cg_shutdown(void) {
 	free(cgctx);
+}
+
+void cg_emit(byte Emit) {
+	fputc(Emit, cgctx->PhysicalFile);
 }

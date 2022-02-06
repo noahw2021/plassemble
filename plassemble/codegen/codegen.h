@@ -18,6 +18,9 @@ void cg_emit(byte Data);
 void cg_line(char* Str);
 void cg_compile(void);
 
+void cgi_tokenize(char* Source, char* Operation, char* OperandA, char* OperandB, char* OperandC);
+void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, char* OperandCStr, byte* Operation, u64* OperandA, u64* OperandB, u64* OperandC, byte* Regmap, byte* PresentMap);
+
 #define _PT_UPDATEBASE	0x00
 
 void cgi_notify(byte Point, u32 Data);
