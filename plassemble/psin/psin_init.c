@@ -6,6 +6,8 @@
 //
 
 #include "psin.h"
+#include <stdlib.h>
+
 psinentry_t* InstructionMap;
 u32 InstructionCount;
 
