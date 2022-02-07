@@ -63,7 +63,6 @@ void cg_line(char* Str) {
 			cgs_posterror(_CGS_TOOBIGIMM, StrOperandC, CurrentLine);
 	}
 	
-	
 	cg_emit(Opcode);
 	if ((RegMap & 0b110) == 0b110) {
 		union {
@@ -79,7 +78,7 @@ void cg_line(char* Str) {
 		if ((PresentMap & 0b001) == 0b001)
 			cg_emitw(OperandC, psin_getoperandcsize(PsinLexicalIterator) / 8);
 		goto EndLine;
-	}
+	} else
 	if ((RegMap & 0b111) == 0b011) {
 		cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator) / 8);
 		union {
@@ -93,6 +92,10 @@ void cg_line(char* Str) {
 		Registers.Register1 = OperandC;
 		cg_emit(Registers.Data);
 		goto EndLine;
+	} else {
+		cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator));
+		cg_emitw(OperandB, psin_getoperandasize(PsinLexicalIterator));
+		cg_emitw(OperandC, psin_getoperandasize(PsinLexicalIterator));
 	}
 	
 EndLine:
