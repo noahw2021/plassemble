@@ -1,5 +1,5 @@
 //
-//  cg_compile.c
+//  cg_line.c
 //  plassemble
 //
 //  Created by Noah Wooten on 2/6/22.

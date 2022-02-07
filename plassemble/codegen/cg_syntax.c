@@ -78,3 +78,10 @@ byte cgs_reduce(u64 Variable) {
 	}
 	return 1;
 }
+
+u32 cgs_geterrorcnt(void){
+	return ErrorCount;
+}
+char* cgs_geterrorstr(int Reference) {
+	return ErrorList[Reference].Message;
+}

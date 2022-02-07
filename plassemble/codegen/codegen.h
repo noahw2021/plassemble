@@ -33,6 +33,9 @@ void cgs_shutdown(void);
 void cgs_posterror(byte Type, char* Argument, u32 Line);
 byte cgs_reduce(u64 Variable);
 
+u32 cgs_geterrorcnt(void);
+char* cgs_geterrorstr(int Reference);
+
 #define _PT_UPDATEBASE	0x00
 
 void cgi_notify(byte Point, u32 Data);
