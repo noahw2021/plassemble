@@ -21,6 +21,7 @@
 		8C05BC5B27B19387006F57AD /* link_init.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC5A27B19387006F57AD /* link_init.c */; };
 		8C05BC5D27B19473006F57AD /* link_symbols.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC5C27B19473006F57AD /* link_symbols.c */; };
 		8C05BC5F27B19C69006F57AD /* link_reloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC5E27B19C69006F57AD /* link_reloc.c */; };
+		8C05BC6127B1A064006F57AD /* ui_filemode.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC6027B1A064006F57AD /* ui_filemode.c */; };
 		8C925E4D27AADA9600150F9E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C925E4C27AADA9600150F9E /* main.c */; };
 		8CCF0DB227AEF9DA0020A8B2 /* ui_help.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF0DB127AEF9DA0020A8B2 /* ui_help.c */; };
 		8CCF0DB427AEFA230020A8B2 /* ui_interactive.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF0DB327AEFA230020A8B2 /* ui_interactive.c */; };
@@ -58,6 +59,7 @@
 		8C05BC5A27B19387006F57AD /* link_init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = link_init.c; sourceTree = "<group>"; };
 		8C05BC5C27B19473006F57AD /* link_symbols.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = link_symbols.c; sourceTree = "<group>"; };
 		8C05BC5E27B19C69006F57AD /* link_reloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = link_reloc.c; sourceTree = "<group>"; };
+		8C05BC6027B1A064006F57AD /* ui_filemode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ui_filemode.c; sourceTree = "<group>"; };
 		8C925E4927AADA9600150F9E /* plassemble */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = plassemble; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C925E4C27AADA9600150F9E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8CCF0DB027AEF9B20020A8B2 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				8CCF0DB127AEF9DA0020A8B2 /* ui_help.c */,
 				8CCF0DB327AEFA230020A8B2 /* ui_interactive.c */,
 				8CCF0DBC27AF02590020A8B2 /* ui_syntax.c */,
+				8C05BC6027B1A064006F57AD /* ui_filemode.c */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				8CCF0DB227AEF9DA0020A8B2 /* ui_help.c in Sources */,
 				8CCF0DB427AEFA230020A8B2 /* ui_interactive.c in Sources */,
 				8C05BC5327B17A47006F57AD /* psin_fetch.c in Sources */,
+				8C05BC6127B1A064006F57AD /* ui_filemode.c in Sources */,
 				8CCF0DBD27AF02590020A8B2 /* ui_syntax.c in Sources */,
 				8C05BC5927B1932D006F57AD /* cg_semantics.c in Sources */,
 				8C05BC5127B17A34006F57AD /* psin_getdata.c in Sources */,

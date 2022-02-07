@@ -20,6 +20,7 @@ u64 link_getsymbol(char* Name);
 byte link_isfuture(char* Name);
 void link_create(char* Name);
 void link_resolve(char* Name, u64 Location);
+u64 link_dynamicreplace(char* Operand);
 
 typedef struct _linkctx {
 	char SymbolName[256];

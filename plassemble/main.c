@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
 	}
 	
 	ArgumentBody(Source, "-f") { // Assembler in file mode
-		
+		aui_filemode(argc, argv);
 	}
 	
 	ArgumentBody(Source, "-h") { // Help

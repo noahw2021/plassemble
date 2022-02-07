@@ -5,4 +5,8 @@
 //  Created by Noah Wooten on 2/5/22.
 //
 
-#include <stdio.h>
+#include "ui.h"
+
+void aui_interactive(int argc, char** argv) {
+	
+}

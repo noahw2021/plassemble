@@ -51,3 +51,12 @@ void link_resolve(char* Name, u64 Location) {
 		}
 	}
 }
+
+u64 link_dynamicreplace(char* Operand) {
+	for (int i = 0; i < LinkSymbolCount; i++) {
+		if (!strcmp(linkctx[i].SymbolName, Operand)) {
+			return linkctx[i].Value;
+		}
+	}
+	return 0xFFFFFFFFFFFFFFFF;
+}
