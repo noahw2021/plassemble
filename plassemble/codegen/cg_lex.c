@@ -42,7 +42,6 @@ void cgi_tokenize(char* Source, char* Operation, char* OperandA, char* OperandB,
 #define Register(Source, Destination, ID) if (!strcmp(Source, "R" #ID)) { *Destination = ID; if (Source == SourceOperandA) { *Regmap |= 0b100; *PresentMap |= 0b100; } else if (Source == SourceOperandB) { *Regmap |= 0b010; *PresentMap |= 0b010; } else if (Source == SourceOperandC) { *Regmap |= 0b001; *PresentMap |= 0b001; } } else if (strtoull(Source, NULL, 10) != 0) { if (Source == SourceOperandA) { *PresentMap |= 0b100; } else if (Source == SourceOperandB) { *PresentMap |= 0b010; } else if (Source == SourceOperandC) { *PresentMap |= 0b001; } }
 
 void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, char* OperandCStr, byte* Operation, u64* OperandA, u64* OperandB, u64* OperandC, byte* Regmap, byte* PresentMap) {
-	
 	char* SourceOperation = malloc(64);
 	char* SourceOperandA = malloc(64);
 	char* SourceOperandB = malloc(64);
@@ -202,7 +201,6 @@ void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, 
 	Register(SourceOperandC, OperandC, 13);
 	Register(SourceOperandC, OperandC, 14);
 	Register(SourceOperandC, OperandC, 15);
-	
 	
 	free(SourceOperation);
 	free(SourceOperandA);

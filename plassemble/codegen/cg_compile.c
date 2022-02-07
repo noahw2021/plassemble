@@ -6,7 +6,9 @@
 //
 
 #include "codegen.h"
+#include "../link/link.h"
 
 void cg_compile(void) {
-	
+	link_ready();
+	cg_shutdown();
 }

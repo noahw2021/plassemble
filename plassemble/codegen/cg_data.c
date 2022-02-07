@@ -10,6 +10,8 @@
 #include <string.h>
 
 #include "codegen.h"
+#include "../link/link.h"
+#include "../psin/psin.h"
 cgctx_t* cgctx;
 
 void cg_init(FILE* Output) {
@@ -20,11 +22,15 @@ void cg_init(FILE* Output) {
 	ErrorLevel = 0;
 	CurrentLine = 0;
 	
+	link_init();
+	psin_init();
 	cgs_init();
 	cgi_loadintructions();
 }
 void cg_shutdown(void) {
 	cgs_shutdown();
+	link_shutdown();
+	psin_shutdown();
 	free(cgctx);
 }
 
