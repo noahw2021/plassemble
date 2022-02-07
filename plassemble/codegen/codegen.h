@@ -15,6 +15,7 @@ void cg_init(FILE* Output);
 void cg_shutdown(void);
 
 void cg_emit(byte Data);
+void cg_emitw(u64 Data, byte Count);
 void cg_line(char* Str);
 void cg_compile(void);
 

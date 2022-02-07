@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C05BC4227B08A8A006F57AD /* cg.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4127B08A8A006F57AD /* cg.c */; };
+		8C05BC4227B08A8A006F57AD /* compile.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4127B08A8A006F57AD /* compile.c */; };
 		8C05BC4427B08B28006F57AD /* lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4327B08B28006F57AD /* lex.c */; };
 		8C05BC4627B08C99006F57AD /* rtl.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4527B08C99006F57AD /* rtl.c */; };
+		8C05BC4B27B16A83006F57AD /* psin.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4A27B16A83006F57AD /* psin.c */; };
 		8C925E4D27AADA9600150F9E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C925E4C27AADA9600150F9E /* main.c */; };
 		8CCF0DB227AEF9DA0020A8B2 /* help.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF0DB127AEF9DA0020A8B2 /* help.c */; };
 		8CCF0DB427AEFA230020A8B2 /* interactive.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF0DB327AEFA230020A8B2 /* interactive.c */; };
@@ -31,10 +32,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8C05BC4127B08A8A006F57AD /* cg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cg.c; sourceTree = "<group>"; };
+		8C05BC4127B08A8A006F57AD /* compile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = compile.c; sourceTree = "<group>"; };
 		8C05BC4327B08B28006F57AD /* lex.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lex.c; sourceTree = "<group>"; };
 		8C05BC4527B08C99006F57AD /* rtl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rtl.c; sourceTree = "<group>"; };
 		8C05BC4727B08DB2006F57AD /* ops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ops.h; sourceTree = "<group>"; };
+		8C05BC4927B16919006F57AD /* psin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = psin.h; sourceTree = "<group>"; };
+		8C05BC4A27B16A83006F57AD /* psin.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = psin.c; sourceTree = "<group>"; };
 		8C925E4927AADA9600150F9E /* plassemble */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = plassemble; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C925E4C27AADA9600150F9E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8CCF0DB027AEF9B20020A8B2 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
@@ -59,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C05BC4827B16911006F57AD /* psin */ = {
+			isa = PBXGroup;
+			children = (
+				8C05BC4927B16919006F57AD /* psin.h */,
+				8C05BC4A27B16A83006F57AD /* psin.c */,
+			);
+			path = psin;
+			sourceTree = "<group>";
+		};
 		8C925E4027AADA9600150F9E = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +90,7 @@
 		8C925E4B27AADA9600150F9E /* plassemble */ = {
 			isa = PBXGroup;
 			children = (
+				8C05BC4827B16911006F57AD /* psin */,
 				8CCF0DB827AEFB5C0020A8B2 /* link */,
 				8CCF0DB627AEFAC90020A8B2 /* codegen */,
 				8CCF0DAF27AEF9AB0020A8B2 /* ui */,
@@ -106,7 +119,7 @@
 				8CCF0DB727AEFAD40020A8B2 /* codegen.h */,
 				8C05BC4727B08DB2006F57AD /* ops.h */,
 				8CCF0DBE27AF03C50020A8B2 /* data.c */,
-				8C05BC4127B08A8A006F57AD /* cg.c */,
+				8C05BC4127B08A8A006F57AD /* compile.c */,
 				8C05BC4327B08B28006F57AD /* lex.c */,
 			);
 			path = codegen;
@@ -182,8 +195,9 @@
 				8CCF0DB427AEFA230020A8B2 /* interactive.c in Sources */,
 				8CCF0DBD27AF02590020A8B2 /* syntax.c in Sources */,
 				8C925E4D27AADA9600150F9E /* main.c in Sources */,
+				8C05BC4B27B16A83006F57AD /* psin.c in Sources */,
 				8CCF0DBB27AEFC690020A8B2 /* parse.c in Sources */,
-				8C05BC4227B08A8A006F57AD /* cg.c in Sources */,
+				8C05BC4227B08A8A006F57AD /* compile.c in Sources */,
 				8CCF0DBF27AF03C50020A8B2 /* data.c in Sources */,
 				8C05BC4427B08B28006F57AD /* lex.c in Sources */,
 			);

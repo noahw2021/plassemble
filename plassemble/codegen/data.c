@@ -25,3 +25,13 @@ void cg_shutdown(void) {
 void cg_emit(byte Emit) {
 	fputc(Emit, cgctx->PhysicalFile);
 }
+
+void cg_emitw(u64 Data, byte Count) {
+	union {
+		u64 Big;
+		byte Small[8];
+	}MedInt;
+	MedInt.Big = Data;
+	for (int i = 0; i < Count; i++)
+		cg_emit(MedInt.Small[i]);
+}

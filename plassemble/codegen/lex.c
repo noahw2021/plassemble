@@ -36,7 +36,7 @@ void cgi_tokenize(char* Source, char* Operation, char* OperandA, char* OperandB,
 	free(Data);
 }
 
-#define Instruction(Source, Destination, Opcode) if (!strcmp(Source, #Opcode)) { *Destination = __##Opcode; }
+#define Instruction(Source, Destination, Opcode) if (!strcmp(Source, #Opcode)) { *Destination = __##Opcode; } else
 #define Register(Source, Destination, ID) if (!strcmp(Source, "R" #ID)) { *Destination = ID; if (Source == SourceOperandA) { *Regmap |= 0b100; *PresentMap |= 0b100; } else if (Source == SourceOperandB) { *Regmap |= 0b010; *PresentMap |= 0b010; } else if (Source == SourceOperandC) { *Regmap |= 0b001; *PresentMap |= 0b001; } } else if (strtoull(Source, NULL, 10) != 0) { if (Source == SourceOperandA) { *PresentMap |= 0b100; } else if (Source == SourceOperandB) { *PresentMap |= 0b010; } else if (Source == SourceOperandC) { *PresentMap |= 0b001; } }
 
 void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, char* OperandCStr, byte* Operation, u64* OperandA, u64* OperandB, u64* OperandC, byte* Regmap, byte* PresentMap) {
@@ -145,7 +145,9 @@ void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, 
 	Instruction(SourceOperation, Operation, STQM);
 	Instruction(SourceOperation, Operation, STQMI);
 	Instruction(SourceOperation, Operation, STHM);
-	Instruction(SourceOperation, Operation, STHMI);
+	Instruction(SourceOperation, Operation, STHMI) { // End of else
+		
+	}
 	
 	Register(SourceOperandA, OperandA, 0);
 	Register(SourceOperandA, OperandA, 1);
