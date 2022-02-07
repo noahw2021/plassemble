@@ -19,7 +19,7 @@ void psini_createinst(byte Opcode, byte OperandA, byte OperandB, byte OperandC, 
 	InstructionMap[InstructionCount].PresentMap = PresentMap;
 	InstructionMap[InstructionCount].RegMap = Regmap;
 	InstructionMap[InstructionCount].Opcode = Opcode;
-	strncpy(InstructionMap[InstructionCount].Mnemonic, Name, 23);
+	strncpy(InstructionMap[InstructionCount].Mnemonic, Name, 16);
 	InstructionMap[InstructionCount].OperandASize = OperandA;
 	InstructionMap[InstructionCount].OperandBSize = OperandB;
 	InstructionMap[InstructionCount].OperandCSize = OperandC;
