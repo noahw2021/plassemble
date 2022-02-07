@@ -15,7 +15,6 @@ void link_shutdown(void);
 
 void link_notify(char* Name, u64 Location, byte Offset);
 void link_ready(void);
-u64 link_dynamicreplace(char* Operand);
 
 u64 link_getsymbol(char* Name);
 byte link_isfuture(char* Name);
