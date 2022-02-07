@@ -1,5 +1,5 @@
 //
-//  lex.c
+//  cg_lex.c
 //  plassemble
 //
 //  Created by Noah Wooten on 2/6/22.

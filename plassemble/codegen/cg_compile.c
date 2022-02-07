@@ -1,5 +1,5 @@
 //
-//  compile.c
+//  cg_compile.c
 //  plassemble
 //
 //  Created by Noah Wooten on 2/6/22.

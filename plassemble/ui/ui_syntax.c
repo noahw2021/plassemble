@@ -1,5 +1,5 @@
 //
-//  syntax.c
+//  ui_syntax.c
 //  plassemble
 //
 //  Created by Noah Wooten on 2/5/22.
