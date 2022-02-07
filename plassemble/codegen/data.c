@@ -19,7 +19,9 @@ void cg_init(FILE* Output) {
 	cgctx->PhysicalFile = Output;
 	ErrorLevel = 0;
 	CurrentLine = 0;
+	
 	cgs_init();
+	cgi_loadintructions();
 }
 void cg_shutdown(void) {
 	cgs_shutdown();

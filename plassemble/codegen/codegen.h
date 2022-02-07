@@ -21,6 +21,7 @@ void cg_compile(void);
 
 void cgi_tokenize(char* Source, char* Operation, char* OperandA, char* OperandB, char* OperandC);
 void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, char* OperandCStr, byte* Operation, u64* OperandA, u64* OperandB, u64* OperandC, byte* Regmap, byte* PresentMap);
+void cgi_loadintructions(void);
 
 #define _CGS_INVALIDOP  0x00
 #define _CGS_INVALIDREG 0x01
