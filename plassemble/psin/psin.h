@@ -37,5 +37,6 @@ typedef struct psinentry {
 	byte OperandCSize;
 }psinentry_t;
 extern psinentry_t* InstructionMap;
+extern u32 InstructionCount;
 
 #endif /* psin_h */

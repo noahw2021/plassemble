@@ -7,3 +7,15 @@
 
 #include "psin.h"
 psinentry_t* InstructionMap;
+u32 InstructionCount;
+
+void psin_init(void) {
+	InstructionCount = 0;
+	InstructionMap = NULL;
+	return;
+}
+void psin_shutdown(void) {
+	if (InstructionMap)
+		free(InstructionMap);
+	return;
+}

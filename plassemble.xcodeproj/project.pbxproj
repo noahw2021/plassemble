@@ -12,6 +12,7 @@
 		8C05BC4627B08C99006F57AD /* rtl.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4527B08C99006F57AD /* rtl.c */; };
 		8C05BC4B27B16A83006F57AD /* psin_init.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4A27B16A83006F57AD /* psin_init.c */; };
 		8C05BC4D27B16F17006F57AD /* cg_psindata.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4C27B16F17006F57AD /* cg_psindata.c */; };
+		8C05BC4F27B17197006F57AD /* psin_loadint.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05BC4E27B17197006F57AD /* psin_loadint.c */; };
 		8C925E4D27AADA9600150F9E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C925E4C27AADA9600150F9E /* main.c */; };
 		8CCF0DB227AEF9DA0020A8B2 /* ui_help.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF0DB127AEF9DA0020A8B2 /* ui_help.c */; };
 		8CCF0DB427AEFA230020A8B2 /* ui_interactive.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF0DB327AEFA230020A8B2 /* ui_interactive.c */; };
@@ -40,6 +41,7 @@
 		8C05BC4927B16919006F57AD /* psin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = psin.h; sourceTree = "<group>"; };
 		8C05BC4A27B16A83006F57AD /* psin_init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = psin_init.c; sourceTree = "<group>"; };
 		8C05BC4C27B16F17006F57AD /* cg_psindata.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cg_psindata.c; sourceTree = "<group>"; };
+		8C05BC4E27B17197006F57AD /* psin_loadint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = psin_loadint.c; sourceTree = "<group>"; };
 		8C925E4927AADA9600150F9E /* plassemble */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = plassemble; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C925E4C27AADA9600150F9E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8CCF0DB027AEF9B20020A8B2 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				8C05BC4927B16919006F57AD /* psin.h */,
 				8C05BC4A27B16A83006F57AD /* psin_init.c */,
+				8C05BC4E27B17197006F57AD /* psin_loadint.c */,
 			);
 			path = psin;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				8C05BC4227B08A8A006F57AD /* cg_compile.c in Sources */,
 				8CCF0DBF27AF03C50020A8B2 /* cg_data.c in Sources */,
 				8C05BC4427B08B28006F57AD /* cg_lex.c in Sources */,
+				8C05BC4F27B17197006F57AD /* psin_loadint.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
