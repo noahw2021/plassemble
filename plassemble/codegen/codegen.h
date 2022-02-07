@@ -30,7 +30,7 @@ void cgi_loadintructions(void);
 
 void cgs_init(void);
 void cgs_shutdown(void);
-void cgs_posterror(byte Type, char* Argument, byte Line);
+void cgs_posterror(byte Type, char* Argument, u32 Line);
 byte cgs_reduce(u64 Variable);
 
 #define _PT_UPDATEBASE	0x00
