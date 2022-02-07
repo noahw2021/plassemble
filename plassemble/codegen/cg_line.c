@@ -6,7 +6,9 @@
 //
 
 #include "codegen.h"
+#include "ops.h"
 #include "../psin/psin.h"
+#include "../link/link.h"
 #include <stdlib.h>
 
 void cg_line(char* Str) {
@@ -20,6 +22,15 @@ void cg_line(char* Str) {
 	char* StrOperandC = malloc(64);
 	
 	cgi_tokenize(Str, StrOperation, StrOperandA, StrOperandB, StrOperandC);
+	u64 LinkerResposne = link_dynamicreplace(StrOperandA);
+	if (LinkerResposne != 0xFFFFFFFFFFFFFFFF) {
+		link_notify(StrOperandA, ftell(cgctx->PhysicalFile), 0);
+		u64 Output = 0;
+		if (!link_isfuture(StrOperandA))
+			Output = link_getsymbol(StrOperandA);
+		sprintf(StrOperandA, "%llu", Output);
+	}
+	
 	cgi_lexicalparse(StrOperation, StrOperandA, StrOperandB, StrOperandC, &Opcode, &OperandA, &OperandB, &OperandC, &RegMap, &PresentMap);
 	
 	u32 PsinLexicalIterator = psin_getbyopcode(Opcode);
@@ -78,8 +89,7 @@ void cg_line(char* Str) {
 		if ((PresentMap & 0b001) == 0b001)
 			cg_emitw(OperandC, psin_getoperandcsize(PsinLexicalIterator) / 8);
 		goto EndLine;
-	} else
-	if ((RegMap & 0b111) == 0b011) {
+	} else if ((RegMap & 0b111) == 0b011) {
 		cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator) / 8);
 		union {
 			byte Data;
@@ -93,9 +103,12 @@ void cg_line(char* Str) {
 		cg_emit(Registers.Data);
 		goto EndLine;
 	} else {
-		cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator));
-		cg_emitw(OperandB, psin_getoperandasize(PsinLexicalIterator));
-		cg_emitw(OperandC, psin_getoperandasize(PsinLexicalIterator));
+		if (PresentMap & 0b100)
+			cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator));
+		if (PresentMap & 0b010)
+			cg_emitw(OperandB, psin_getoperandasize(PsinLexicalIterator));
+		if (PresentMap & 0b001)
+			cg_emitw(OperandC, psin_getoperandasize(PsinLexicalIterator));
 	}
 	
 EndLine:

@@ -17,5 +17,6 @@ byte link_isfuture(char* Name);
 void link_notify(char* Name, u64 Location, byte Offset);
 void link_ready(void);
 void link_create(char* Name);
+u64 link_dynamicreplace(char* Operand);
 
 #endif /* link_h */
