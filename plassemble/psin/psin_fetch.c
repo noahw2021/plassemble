@@ -7,6 +7,7 @@
 
 #include "psin.h"
 #include <stdlib.h>
+#include <string.h>
 
 u32 psin_getbyopcode(byte Opcode) {
 	for (int i = 0; i < InstructionCount; i++) {
