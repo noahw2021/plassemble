@@ -17,8 +17,12 @@ void cg_init(FILE* Output) {
 	memset(cgctx, 0, sizeof(cgctx_t));
 	
 	cgctx->PhysicalFile = Output;
+	ErrorLevel = 0;
+	CurrentLine = 0;
+	cgs_init();
 }
 void cg_shutdown(void) {
+	cgs_shutdown();
 	free(cgctx);
 }
 

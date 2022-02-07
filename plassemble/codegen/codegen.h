@@ -22,6 +22,14 @@ void cg_compile(void);
 void cgi_tokenize(char* Source, char* Operation, char* OperandA, char* OperandB, char* OperandC);
 void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, char* OperandCStr, byte* Operation, u64* OperandA, u64* OperandB, u64* OperandC, byte* Regmap, byte* PresentMap);
 
+#define _CGS_INVALIDOP  0x00
+#define _CGS_INVALIDREG 0x01
+#define _CGS_TOOBIGIMM	0x02
+
+void cgs_init(void);
+void cgs_shutdown(void);
+void cgs_posterror(byte Type, char* Argument, byte Line);
+
 #define _PT_UPDATEBASE	0x00
 
 void cgi_notify(byte Point, u32 Data);
@@ -32,5 +40,7 @@ typedef struct _cgctx {
 	u32 NumericalBase;
 }cgctx_t;
 extern cgctx_t* cgctx;
+extern u32 ErrorLevel;
+extern u32 CurrentLine;
 
 #endif /* codegen_h */

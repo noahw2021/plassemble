@@ -9,6 +9,8 @@
 #include "ops.h"
 #include <stdlib.h>
 #include <string.h>
+u32 ErrorLevel;
+u32 CurrentLine;
 
 void cgi_tokenize(char* Source, char* Operation, char* OperandA, char* OperandB, char* OperandC) {
 	char* Data = malloc(2048);
@@ -146,7 +148,8 @@ void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, 
 	Instruction(SourceOperation, Operation, STQMI);
 	Instruction(SourceOperation, Operation, STHM);
 	Instruction(SourceOperation, Operation, STHMI) { // End of else
-		
+		ErrorLevel++;
+		cgs_posterror(_CGS_INVALIDOP, SourceOperation, CurrentLine);
 	}
 	
 	Register(SourceOperandA, OperandA, 0);

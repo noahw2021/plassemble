@@ -21,6 +21,7 @@ void parse_stdfile(FILE* File) {
 }
 
 void parse_string(char* String) {
+	CurrentLine++;
 	if (strstr(String, "\r"))
 		strstr(String, "\r")[0] = '\0';
 	if (strstr(String, "\n"))

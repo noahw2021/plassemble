@@ -15,7 +15,17 @@ void psin_shutdown(void);
 u32 psin_declare(const char* Instruction);
 char* psin_getsyntax(void);
 
-char* psin_parseline(byte Opcode, word OperandA, word OperandB, word OperandC, byte Regmap);
+char* psin_parseline(byte Opcode, u64 OperandA, u64 OperandB, u64 OperandC, byte Regmap);
+u32 psin_getbyopcode(byte Opcode);
+u32 psin_getbymnemonic(char* Mnemonic);
+
+char* psin_getmnemonic(u32 Iterator);
+byte psin_getopcode(u32 Iterator);
+byte psin_getregmap(u32 Iterator);
+byte psin_getpresentmap(u32 Iterator);
+byte psin_getoperandasize(u32 Iterator);
+byte psin_getoperandbsize(u32 Iterator);
+byte psin_getoperandcsize(u32 Iterator);
 
 typedef struct psinentry {
 	str Mnemonic[16];
