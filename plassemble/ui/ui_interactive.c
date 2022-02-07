@@ -33,4 +33,5 @@ void aui_interactive(int argc, char** argv) {
 	cg_shutdown();
 	printf("[INFO]: Compiled!\n");
 	fclose(Output);
+	return;
 }
