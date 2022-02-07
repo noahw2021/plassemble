@@ -81,19 +81,19 @@ u32 psin_declare(const char* Instruction) {
 	}
 	StrIterator += 2;
 	TemporaryData = malloc(5);
-	if (LocalData[StrIterator + 1] != ',') {
+	if (LocalData[StrIterator + 1] != ')') {
 		StrIterator += 3;
 	} else {
 		StrIterator += 2;
 	}
-	if (LocalData[StrIterator + 1] != ',') {
+	if (LocalData[StrIterator + 1] != ')') {
 		strncpy(TemporaryData, LocalData + StrIterator, 2);
 	} else {
 		strncpy(TemporaryData, LocalData + StrIterator, 1);
 	}
 	
-	free(TemporaryData);
 	OperandA = atoi(TemporaryData);
+	free(TemporaryData);
 	while (LocalData[StrIterator] != ']') {
 		StrIterator++;
 	}
@@ -138,7 +138,7 @@ u32 psin_declare(const char* Instruction) {
 	// Get Operand C
 	StrIterator = 0;
 	while (LocalData[StrIterator] != '[') {
-		if ((StrIterator + 1) > strlen(LocalData)) {
+		if (LocalData[StrIterator] == ')') {
 			goto Create;
 		}
 		StrIterator++;
