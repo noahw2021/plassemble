@@ -10,5 +10,8 @@
 
 void cg_compile(void) {
 	link_ready();
-	cg_shutdown();
+	for (int i = 0; i < cgs_geterrorcnt(); i++) {
+		printf("%s", cgs_geterrorstr(i));
+	}
+	return;
 }

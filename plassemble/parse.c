@@ -11,6 +11,7 @@
 
 #include "codegen/codegen.h"
 #include "link/link.h"
+u32 GlobalDone = 0;
 
 void parse_stdfile(FILE* File) {
 	char* Data = malloc(2048);
@@ -29,6 +30,7 @@ void parse_string(char* String) {
 	
 	if (strstr(String, "-a")) { // Assemble
 		cg_compile();
+		GlobalDone = 1;
 	}
 	
 	if (strstr(String, "-e")) { // Extern function
