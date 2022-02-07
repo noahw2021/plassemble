@@ -25,10 +25,12 @@ void cgi_lexicalparse(char* OperationStr, char* OperandAStr, char* OperandBStr, 
 #define _CGS_INVALIDOP  0x00
 #define _CGS_INVALIDREG 0x01
 #define _CGS_TOOBIGIMM	0x02
+#define _CGS_INVALIDARG 0x03
 
 void cgs_init(void);
 void cgs_shutdown(void);
 void cgs_posterror(byte Type, char* Argument, byte Line);
+byte cgs_reduce(u64 Variable);
 
 #define _PT_UPDATEBASE	0x00
 
