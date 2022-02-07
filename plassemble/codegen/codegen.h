@@ -45,6 +45,7 @@ typedef struct _cgctx {
 	FILE* PhysicalFile;
 	u32 NumericalBase;
 }cgctx_t;
+
 extern cgctx_t* cgctx;
 extern u32 ErrorLevel;
 extern u32 CurrentLine;
