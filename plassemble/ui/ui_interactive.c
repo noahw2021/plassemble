@@ -9,6 +9,7 @@
 #include "../codegen/codegen.h"
 #include <stdio.h>
 extern u32 GlobalDone;
+extern u32 CurrentLine;
 
 // printf("%s -a (outfile): Start assembler in interactive mode.\n", argv[0]);
 void aui_interactive(int argc, char** argv) {
@@ -26,6 +27,7 @@ void aui_interactive(int argc, char** argv) {
 	cg_init(Output);
 	
 	while (1) {
+		printf("%lu@%04lX: ", CurrentLine + 1, ftell(Output));
 		parse_stdfile(stdin);
 		if (GlobalDone)
 			break;
