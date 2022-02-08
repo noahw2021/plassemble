@@ -30,6 +30,8 @@ void cgs_shutdown(void) {
 		free(ErrorList);
 }
 void cgs_posterror(byte Type, char* Argument, u32 Line) {
+	if (Argument[0] == '\0')
+		return;
 	if (!ErrorList)
 		ErrorList = malloc(sizeof(cgserror_t) * (ErrorCount + 1));
 	else

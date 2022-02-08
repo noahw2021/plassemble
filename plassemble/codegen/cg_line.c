@@ -95,6 +95,7 @@ void cg_line(char* Str) {
 				cgs_posterror(_CGS_TOOBIGIMM, StrOperandA, CurrentLine);
 		}
 		if (PresentMap & 0b010) {
+			printf("test: %u\n", psin_getoperandbsize(PsinLexicalIterator));
 			if (cgs_reduce(OperandB) > psin_getoperandbsize(PsinLexicalIterator))
 				cgs_posterror(_CGS_TOOBIGIMM, StrOperandB, CurrentLine);
 		}

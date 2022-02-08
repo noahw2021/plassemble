@@ -117,7 +117,7 @@ u32 psin_declare(const char* Instruction) {
 		default:
 			printf("[ERR]: Invalid syntax in %s.\n", Instruction);
 	}
-	StrIterator += 2;
+ 	StrIterator += 2;
 	TemporaryData = malloc(5);
 	if (LocalData[StrIterator + 1] != ',') {
 		StrIterator += 3;
@@ -125,7 +125,7 @@ u32 psin_declare(const char* Instruction) {
 		StrIterator += 2;
 	}
 	if (LocalData[StrIterator + 1] != ',') {
-		strncpy(TemporaryData, LocalData + StrIterator, 2);
+		strncpy(TemporaryData, LocalData + StrIterator + 1, 2);
 	} else {
 		strncpy(TemporaryData, LocalData + StrIterator, 1);
 	}

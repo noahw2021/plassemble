@@ -7,6 +7,6 @@
 
 #include "ui.h"
 
-void aui_filemode(int argc, char**) {
+void aui_filemode(int argc, char** argv) {
 	
 }
