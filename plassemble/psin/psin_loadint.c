@@ -62,7 +62,7 @@ u32 psin_declare(const char* Instruction) {
 	// Get Operand A
 	StrIterator = 0;
 	while (LocalData[StrIterator] != '[') {
-		if ((StrIterator + 1) > strlen(LocalData)) {
+		if (LocalData[StrIterator] == ')') {
 			goto Create;
 		}
 		StrIterator++;
@@ -99,9 +99,8 @@ u32 psin_declare(const char* Instruction) {
 	}
 	
 	// Get Operand B
-	StrIterator = 0;
 	while (LocalData[StrIterator] != '[') {
-		if ((StrIterator + 1) > strlen(LocalData)) {
+		if (LocalData[StrIterator] == ')') {
 			goto Create;
 		}
 		StrIterator++;
@@ -136,7 +135,6 @@ u32 psin_declare(const char* Instruction) {
 	}
 	free(TemporaryData);
 	// Get Operand C
-	StrIterator = 0;
 	while (LocalData[StrIterator] != '[') {
 		if (LocalData[StrIterator] == ')') {
 			goto Create;

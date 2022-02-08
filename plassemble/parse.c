@@ -31,6 +31,7 @@ void parse_string(char* String) {
 	if (strstr(String, "-a")) { // Assemble
 		cg_compile();
 		GlobalDone = 1;
+		return;
 	}
 	
 	if (strstr(String, "-e")) { // Extern function

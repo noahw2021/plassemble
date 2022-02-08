@@ -21,6 +21,7 @@ u32 ErrorCount;
 cgserror_t* ErrorList;
 
 void cgs_init(void) {
+	ErrorCount = 0;
 	ErrorList = NULL;
 	return;
 }

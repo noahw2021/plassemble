@@ -61,19 +61,6 @@ void cg_line(char* Str) {
 		return;
 	}
 	
-	if (PresentMap & 0b100) {
-		if (cgs_reduce(OperandA) > psin_getoperandasize(PsinLexicalIterator))
-			cgs_posterror(_CGS_TOOBIGIMM, StrOperandA, CurrentLine);
-	}
-	if (PresentMap & 0b010) {
-		if (cgs_reduce(OperandB) > psin_getoperandbsize(PsinLexicalIterator))
-			cgs_posterror(_CGS_TOOBIGIMM, StrOperandB, CurrentLine);
-	}
-	if (PresentMap & 0b001) {
-		if (cgs_reduce(OperandC) > psin_getoperandcsize(PsinLexicalIterator))
-			cgs_posterror(_CGS_TOOBIGIMM, StrOperandC, CurrentLine);
-	}
-	
 	cg_emit(Opcode);
 	if ((RegMap & 0b110) == 0b110) {
 		union {
@@ -103,6 +90,18 @@ void cg_line(char* Str) {
 		cg_emit(Registers.Data);
 		goto EndLine;
 	} else {
+		if (PresentMap & 0b100) {
+			if (cgs_reduce(OperandA) > psin_getoperandasize(PsinLexicalIterator))
+				cgs_posterror(_CGS_TOOBIGIMM, StrOperandA, CurrentLine);
+		}
+		if (PresentMap & 0b010) {
+			if (cgs_reduce(OperandB) > psin_getoperandbsize(PsinLexicalIterator))
+				cgs_posterror(_CGS_TOOBIGIMM, StrOperandB, CurrentLine);
+		}
+		if (PresentMap & 0b001) {
+			if (cgs_reduce(OperandC) > psin_getoperandcsize(PsinLexicalIterator))
+				cgs_posterror(_CGS_TOOBIGIMM, StrOperandC, CurrentLine);
+		}
 		if (PresentMap & 0b100)
 			cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator));
 		if (PresentMap & 0b010)

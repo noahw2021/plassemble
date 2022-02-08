@@ -95,7 +95,7 @@ void cgi_loadintructions(void) {
 	psin_declare("LDHM = 0x54, // Load Register Half-Word from Memory (LDHM [R:(4,4),DEST] [R:(4,4),SRC_PTR]):16");
 	psin_declare("STHM = 0x55, // Store Register Half-Word in Memory (STHM [R:(4,4),DEST] [R:(4,4),SRC_PTR]):16");
 	psin_declare("LDHMI = 0x56, // Load Immediate Half-Word from Memory (LDHM [R:(4,8),DEST] [I:(32,32),SRC]):48");
-	psin_declare("STHMI = 0x57, // Store Immediate Half-Word in Memory (STHM [R:(4,8),DEST] [I:(32,32),SRC):48");
+	psin_declare("STHMI = 0x57, // Store Immediate Half-Word in Memory (STHM [R:(4,8),DEST] [I:(32,32),SRC]):48");
 	psin_declare("LDQM = 0x58, // Load Register Quarter-Word from Memory (LDQM [R:(4,4),DEST] [R:(4,4),SRC_PTR]):16");
 	psin_declare("STQM = 0x59, // Store Register Quarter-Word from Memory (STQM [R:(4,4),DEST] [R:(4,4),SRC_PTR]):16");
 	psin_declare("LDQMI = 0x5A, // Load Immediate Quarter-Word from Memory (LDQM [R:(4,8),DEST] [I:(16,16),SRC]):32");
