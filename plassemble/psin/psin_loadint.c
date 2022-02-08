@@ -87,7 +87,7 @@ u32 psin_declare(const char* Instruction) {
 		StrIterator += 2;
 	}
 	if (LocalData[StrIterator + 1] != ')') {
-		strncpy(TemporaryData, LocalData + StrIterator, 2);
+		strncpy(TemporaryData, LocalData + StrIterator + 1, 2);
 	} else {
 		strncpy(TemporaryData, LocalData + StrIterator, 1);
 	}
@@ -161,7 +161,7 @@ u32 psin_declare(const char* Instruction) {
 		StrIterator += 2;
 	}
 	if (LocalData[StrIterator + 1] != ',') {
-		strncpy(TemporaryData, LocalData + StrIterator, 2);
+		strncpy(TemporaryData, LocalData + StrIterator + 1, 2);
 	} else {
 		strncpy(TemporaryData, LocalData + StrIterator, 1);
 	}

@@ -90,25 +90,24 @@ void cg_line(char* Str) {
 		cg_emit(Registers.Data);
 		goto EndLine;
 	} else {
-		if (PresentMap & 0b100) {
-			if (cgs_reduce(OperandA) > psin_getoperandasize(PsinLexicalIterator))
+		if ((PresentMap & 0b100) && !(RegMap & 0b100)) {
+			if ((cgs_reduce(OperandA) * 8) > psin_getoperandasize(PsinLexicalIterator))
 				cgs_posterror(_CGS_TOOBIGIMM, StrOperandA, CurrentLine);
 		}
-		if (PresentMap & 0b010) {
-			printf("test: %u\n", psin_getoperandbsize(PsinLexicalIterator));
-			if (cgs_reduce(OperandB) > psin_getoperandbsize(PsinLexicalIterator))
+		if ((PresentMap & 0b010) && !(RegMap & 0b010)) {
+			if ((cgs_reduce(OperandB) * 8) > psin_getoperandbsize(PsinLexicalIterator))
 				cgs_posterror(_CGS_TOOBIGIMM, StrOperandB, CurrentLine);
 		}
-		if (PresentMap & 0b001) {
-			if (cgs_reduce(OperandC) > psin_getoperandcsize(PsinLexicalIterator))
+		if ((PresentMap & 0b001) && !(RegMap & 0b001)) {
+			if ((cgs_reduce(OperandC) * 8 > psin_getoperandcsize(PsinLexicalIterator)))
 				cgs_posterror(_CGS_TOOBIGIMM, StrOperandC, CurrentLine);
 		}
 		if (PresentMap & 0b100)
-			cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator));
+			cg_emitw(OperandA, psin_getoperandasize(PsinLexicalIterator) / 8);
 		if (PresentMap & 0b010)
-			cg_emitw(OperandB, psin_getoperandasize(PsinLexicalIterator));
+			cg_emitw(OperandB, psin_getoperandbsize(PsinLexicalIterator) / 8);
 		if (PresentMap & 0b001)
-			cg_emitw(OperandC, psin_getoperandasize(PsinLexicalIterator));
+			cg_emitw(OperandC, psin_getoperandcsize(PsinLexicalIterator) / 8);
 	}
 	
 EndLine:
