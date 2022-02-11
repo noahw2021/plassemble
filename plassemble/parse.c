@@ -94,5 +94,13 @@ void parse_string(char* String) {
 		return;
 	}
 	
+	if (strstr(String, "-s")) { // Chnge cursor location
+		char* Data = malloc(241);
+		strcpy(Data, String + 3);
+		fseek(cgctx->PhysicalFile, strtoull(Data, NULL, (int)cgi_getinfo(_PT_UPDATEBASE)), SEEK_SET);
+		free(Data);
+		return;
+	}
+	
 	cg_line(String);
 }
