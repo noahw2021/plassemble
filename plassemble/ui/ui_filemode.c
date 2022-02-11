@@ -42,7 +42,7 @@ void aui_filemode(int argc, char** argv) {
 			break;
 	}
 	cg_shutdown();
-	printf("[INFO]: Compiled %d bytes in %d lines!\n", ftell(Output), CurrentLine);
+	printf("[INFO]: Compiled %lu bytes in %lu lines!\n", ftell(Output), CurrentLine);
 	fclose(Output);
 	return;
 }
