@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "psin_getbymnemonic:psin_fetch.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "InstructionMap[i].Mnemonic">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "cgi_lexicalparse:cg_lex.c">
+      </ContextState>
+      <ContextState
+         contextName = "psin_getregmap:psin_getdata.c">
+      </ContextState>
+      <ContextState
+         contextName = "psin_declare:psin_loadint.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "LocalData + StrIterator">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "cg_line:cg_line.c">
+         <PersistentStrings>
+            <PersistentString
+               value = "InstructionMap[0x25]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
