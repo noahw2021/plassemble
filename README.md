@@ -8,7 +8,7 @@ Below, badges for continous integration are available.
 | macOS (10.15)            |[![macOS Legacy Build](https://github.com/noahw2021/plassemble/actions/workflows/c-osxlegacy.yml/badge.svg)](https://github.com/noahw2021/plassemble/actions/workflows/c-osxlegacy.yml)|
 | Linux (Ubuntu Latest)    |[![Ubuntu Build](https://github.com/noahw2021/plasmvm/actions/workflows/c-ubuntu.yml/badge.svg)](https://github.com/noahw2021/plassemble/actions/workflows/c-ubuntu.yml)|
 | Linux (Ubuntu LTS 18.04) |[![Ubuntu LTS Build](https://github.com/noahw2021/plassemble/actions/workflows/c-ubuntults.yml/badge.svg)](https://github.com/noahw2021/plassemble/actions/workflows/c-ubuntults.yml)|
-| Windows (Latest Release) |[![Windows Build](https://github.com/noahw2021/plassemble/workflows/c-winlatest.yml/badge.svg)](https://github.com/noahw2021/plassemble/actions/workflows/c-winlatest.yml)|
+| Windows (Latest Release) |[![Windows Build](https://github.com/noahw2021/plassemble/actions/workflows/c-winlatest.yml/badge.svg)](https://github.com/noahw2021/plassemble/actions/workflows/c-winlatest.yml)|
 | Windows (Latest Debug)   |[![Windows Debug Build](https://github.com/noahw2021/plassemble/actions/workflows/c-winlatestdbg.yml/badge.svg)](https://github.com/noahw2021/plassemble/actions/workflows/c-winlatestdbg.yml)|
 
 ## Precompiled Binaries
