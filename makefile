@@ -8,6 +8,7 @@ DEPS := $(OBJS:.o=.d)
 INC_DIRS := $(shell find $(SRC_DIRS) -type d)
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 CPPFLAGS := $(INC_FLAGS) -MMD -MP
+UNAME_S := $(shell uname -s)
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
 	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 $(BUILD_DIR)/%.c.o: %.c
