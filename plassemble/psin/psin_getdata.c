@@ -1,6 +1,6 @@
 //
 //  psin_getdata.c
-//  psin
+//  mkpsin
 //
 //  Created by Noah Wooten on 2/7/22.
 //
@@ -66,4 +66,8 @@ int psin_getoperandbphyssize(int Reference) {
 }
 int psin_getoperandcphyssize(int Reference) {
 	return InstructionMap[Reference].OperandCPhysSize;
+}
+
+byte psin_getfloatmap(int Reference) {
+	return InstructionMap[Reference].FloatReg;
 }

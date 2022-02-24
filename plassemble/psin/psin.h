@@ -8,9 +8,10 @@
 #ifndef psin_h
 #define psin_h
 #include "../root.h"
-// "parsepsin" Library v2.0 - 02/15/2022.
+// "parsepsin" Library v1.4 - 02/15/2022.
 /*
  Changelog:
+ -v1.3.1: Adds floating registers
  -v1.3: Revamps parsing library
  -v1.2.1: Adds instruction physical size support
  -v1.2: Adds instruction & opcode sizes for more complex encoding schemes
@@ -44,11 +45,13 @@ char* psin_getoperandcdesc(int Reference);
 int psin_getoperandaphyssize(int Reference);
 int psin_getoperandbphyssize(int Reference);
 int psin_getoperandcphyssize(int Reference);
+byte psin_getfloatmap(int Reference);
 
 typedef struct psinentry {
 	str Mnemonic[16];
 	str Description[240];
 	byte Opcode;
+	byte FloatReg;
 	byte RegMap;
 	byte PresentMap;
 	byte OperandASize;

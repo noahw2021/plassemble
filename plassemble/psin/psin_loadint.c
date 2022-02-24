@@ -10,7 +10,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void psini_createinst(byte Opcode, byte OperandA, byte OperandB, byte OperandC, byte Regmap, byte PresentMap, char* Name, char* Desc, char* OpADesc, char* OpBDesc, char* OpCDesc, int TotalSize, int OpAPhys, int OpBPhys, int OpCPhys) {
+void psini_createinst(byte Opcode, byte OperandA, byte OperandB, byte OperandC, byte Regmap, byte PresentMap, char* Name, char* Desc, char* OpADesc, char* OpBDesc, char* OpCDesc, int TotalSize, int OpAPhys, int OpBPhys, int OpCPhys, byte FloatMap) {
 	if (InstructionCount == 0)
 		InstructionMap = malloc((InstructionCount + 1) * sizeof(psinentry_t));
 	else
@@ -36,6 +36,7 @@ void psini_createinst(byte Opcode, byte OperandA, byte OperandB, byte OperandC, 
 	InstructionMap[InstructionCount].OperandAPhysSize = OpAPhys;
 	InstructionMap[InstructionCount].OperandBPhysSize = OpBPhys;
 	InstructionMap[InstructionCount].OperandCPhysSize = OpCPhys;
+	InstructionMap[InstructionCount].FloatReg = FloatMap;
 	
 	InstructionCount++;
 	return;
@@ -64,6 +65,7 @@ int psin_declare(const char* Instruction) {
 	int InterStage = 0;
 	char* DescriptionBasePtr = NULL;
 	byte Flags = 0;
+	byte FloatMap;
 	int BackupIterator = 0;
 	int LocalDescriptionCounter = 0;
 	char* LocalDescriptionBasePtr = NULL;
@@ -180,6 +182,8 @@ int psin_declare(const char* Instruction) {
 						if (InterStage == 1) {
 							if (ParseString[StrIterator] == 'R')
 								RegisterMap |= 0b100;
+							if (ParseString[StrIterator] == 'F')
+								FloatMap |= 0b100;
 							InterStage++;
 							break;
 						} else {
@@ -244,6 +248,8 @@ int psin_declare(const char* Instruction) {
 						if (InterStage == 1) {
 							if (ParseString[StrIterator] == 'R')
 								RegisterMap |= 0b010;
+							if (ParseString[StrIterator] == 'F')
+								FloatMap |= 0b010;
 							InterStage++;
 							break;
 						} else {
@@ -305,9 +311,12 @@ int psin_declare(const char* Instruction) {
 						break;
 					case 'I': // Stage 1
 					case 'R':
+					case 'F':
 						if (InterStage == 1) {
 							if (ParseString[StrIterator] == 'R')
 								RegisterMap |= 0b001;
+							if (ParseString[StrIterator] == 'F')
+								FloatMap |= 0b001;
 							InterStage++;
 							break;
 						} else {
@@ -379,7 +388,7 @@ int psin_declare(const char* Instruction) {
 		
 		StrIterator++;
 	}
-	psini_createinst(Opcode, OperandASize, OperandBSize, OperandCSize, RegisterMap, PresentMap, Mnemonic, Description, OperandADesc, OperandBDesc, OperandCDesc, (int)TotalInstructionSize, OperandAPhys, OperandBPhys, OperandCPhys);
+	psini_createinst(Opcode, OperandASize, OperandBSize, OperandCSize, RegisterMap, PresentMap, Mnemonic, Description, OperandADesc, OperandBDesc, OperandCDesc, (int)TotalInstructionSize, OperandAPhys, OperandBPhys, OperandCPhys, FloatMap);
 	
 	free(ParseString);
 	free(Mnemonic);
