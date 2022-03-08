@@ -1,4 +1,7 @@
 # plassembler
+![Lines of Code](https://tokei.rs/b1/github/noahw2021/plasmvm)
+![Code size](https://img.shields.io/github/languages/code-size/noahw2021/plasmvm.svg)
+<br>
 An assembler written for the PLASM architecture.
 ## Continous Integration
 Below, badges for continous integration are available.
