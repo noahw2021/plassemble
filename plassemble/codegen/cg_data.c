@@ -19,6 +19,7 @@ void cg_init(FILE* Output) {
 	memset(cgctx, 0, sizeof(cgctx_t));
 	
 	cgctx->PhysicalFile = Output;
+	cgctx->NumericalBase = 10;
 	ErrorLevel = 0;
 	CurrentLine = 0;
 	
